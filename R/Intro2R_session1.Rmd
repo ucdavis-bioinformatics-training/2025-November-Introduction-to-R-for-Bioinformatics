@@ -68,11 +68,9 @@ function showResults(myq, qc, rc){
 }
 </script>
 
-```{r echo=F}
-knitr::opts_chunk$set(
-  comment = "",
-  results = "asis"
-)
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(comment = "")
+knitr::knit_hooks$set(output = function(x, options) paste0("\n", x, "\n"))
 ```
 
 ```{r echo=F, include=FALSE}

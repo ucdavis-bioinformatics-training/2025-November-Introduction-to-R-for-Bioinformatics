@@ -57,6 +57,16 @@ function showResults(myq, qc, rc){
 }
 </script>
 
+<style type="text/css">
+.colsel {
+background-color: lightyellow;
+}
+&#10;pre, code {
+  white-space:pre !important;
+  overflow-x:scroll auto
+}
+</style>
+
 # R and RStudio
 
 ### What is R?

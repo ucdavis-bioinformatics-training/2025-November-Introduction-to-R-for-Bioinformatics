@@ -21,8 +21,8 @@ navigation:
     url: base/cheatSheetIndex
 
   - heading: Introduction to R
-  - title: Introduction to R Session 1
-    url: R/Intro2R_session1
+  - title: Introduction to R Day 1
+    url: R/Intro2R_day1
   - title: Introduction to R Day 2
     url: R/Intro2R_day2
   - title: Introduction to R Day 3

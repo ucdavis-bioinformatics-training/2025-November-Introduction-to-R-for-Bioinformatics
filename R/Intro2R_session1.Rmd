@@ -68,13 +68,6 @@ function showResults(myq, qc, rc){
 }
 </script>
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(comment = "")
-knitr::knit_hooks$set(output = function(x, options) {
-  # Replace newlines with markdown line breaks
-  paste0("\n", gsub("(?<!\\n)\\n(?!\\n)", "  \n", x, perl = TRUE), "\n")
-})
-```
 
 ```{r echo=F, include=FALSE}
 library(dplyr)

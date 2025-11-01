@@ -655,7 +655,7 @@ a <- 150
 a
 ```
 
-\[1\] 150
+    ## [1] 150
 
 ``` r
 # assign a number in scientific format to variable b.
@@ -663,7 +663,8 @@ b <- 3e-2
 b
 ```
 
-\[1\] 0.03  
+    ## [1] 0.03
+
 <br>
 
 ##### Examples of character values.
@@ -674,7 +675,7 @@ gene <- "BRCA1"
 gene
 ```
 
-\[1\] “BRCA1”
+    ## [1] "BRCA1"
 
 ``` r
 # assign a string "Hello World" to variable hello
@@ -682,7 +683,8 @@ hello <- "Hello World"
 hello
 ```
 
-\[1\] “Hello World”  
+    ## [1] "Hello World"
+
 <br>
 
 ##### Examples of logical values.
@@ -693,7 +695,7 @@ brca1_expressed <- TRUE
 brca1_expressed
 ```
 
-\[1\] TRUE
+    ## [1] TRUE
 
 ``` r
 # assign logical value "FALSE" to variable her2_expressed
@@ -701,7 +703,7 @@ her2_expressed <- FALSE
 her2_expressed
 ```
 
-\[1\] FALSE
+    ## [1] FALSE
 
 ``` r
 # assign logical value to a variable by logical operation
@@ -710,7 +712,8 @@ her2_expressed <- her2_expression_level > 0
 her2_expressed
 ```
 
-\[1\] FALSE  
+    ## [1] FALSE
+
 <br>
 
 ##### To find out the type of variable.
@@ -719,26 +722,27 @@ her2_expressed
 class(her2_expressed)
 ```
 
-\[1\] “logical”
+    ## [1] "logical"
 
 ``` r
 # To check whether the variable is a specific type
 is.numeric(gene)
 ```
 
-\[1\] FALSE
+    ## [1] FALSE
 
 ``` r
 is.numeric(a)
 ```
 
-\[1\] TRUE
+    ## [1] TRUE
 
 ``` r
 is.character(gene)
 ```
 
-\[1\] TRUE  
+    ## [1] TRUE
+
 <br>
 
 ##### In the case that one compares two different classes of data, the coersion rule in R is **logical -\> integer -\> numeric -\> complex -\> character** . The following is an example of converting a numeric variable to character.
@@ -747,13 +751,14 @@ is.character(gene)
 b
 ```
 
-\[1\] 0.03
+    ## [1] 0.03
 
 ``` r
 as.character(b)
 ```
 
-\[1\] “0.03”  
+    ## [1] "0.03"
+
 <br>
 
 What happens when one converts a logical variable to numeric?
@@ -763,20 +768,21 @@ What happens when one converts a logical variable to numeric?
 her2_expressed
 ```
 
-\[1\] FALSE
+    ## [1] FALSE
 
 ``` r
 # conversion
 as.numeric(her2_expressed)
 ```
 
-\[1\] 0
+    ## [1] 0
 
 ``` r
 her2_expressed + 1
 ```
 
-\[1\] 1  
+    ## [1] 1
+
 <br>
 
 ##### A logical *TRUE* is converted to integer 1 and a logical *FALSE* is converted to integer 0.
@@ -937,14 +943,15 @@ gene_names <- c("ESR1", "p53", "PI3K", "BRCA1", "EGFR")
 gene_names
 ```
 
-\[1\] “ESR1” “p53” “PI3K” “BRCA1” “EGFR”
+    ## [1] "ESR1"  "p53"   "PI3K"  "BRCA1" "EGFR"
 
 ``` r
 gene_expression <- c(0, 100, 50, 200, 80)
 gene_expression
 ```
 
-\[1\] 0 100 50 200 80  
+    ## [1]   0 100  50 200  80
+
 <br>
 
 ##### One can give names to the elements of an atomic vector.
@@ -955,8 +962,8 @@ names(gene_expression) <- c("ESR1", "p53", "PI3K", "BRCA1", "EGFR")
 gene_expression
 ```
 
-ESR1 p53 PI3K BRCA1 EGFR  
-0 100 50 200 80
+    ##  ESR1   p53  PI3K BRCA1  EGFR 
+    ##     0   100    50   200    80
 
 ``` r
 # assign names to a vector using another vector
@@ -964,8 +971,9 @@ names(gene_expression) <- gene_names
 gene_expression
 ```
 
-ESR1 p53 PI3K BRCA1 EGFR  
-0 100 50 200 80  
+    ##  ESR1   p53  PI3K BRCA1  EGFR 
+    ##     0   100    50   200    80
+
 <br>
 
 ##### Or One may create a vector with named elements from scratch.
@@ -975,8 +983,9 @@ gene_expression <- c(ESR1=0, p53=100, PI3K=50, BRCA1=200, EGFR=80)
 gene_expression
 ```
 
-ESR1 p53 PI3K BRCA1 EGFR  
-0 100 50 200 80  
+    ##  ESR1   p53  PI3K BRCA1  EGFR 
+    ##     0   100    50   200    80
+
 <br>
 
 ##### To find out the length of a vector:
@@ -985,7 +994,7 @@ ESR1 p53 PI3K BRCA1 EGFR
 length(gene_expression)
 ```
 
-\[1\] 5
+    ## [1] 5
 
 ##### NOTE: a vector can only hold elements of the same type. If there are a mixture of data types, they will be coerced according to the coersion rule mentioned earlier in this documentation.
 
@@ -998,8 +1007,9 @@ disease_stage <- factor(c("Stage1", "Stage2", "Stage2", "Stage3", "Stage1", "Sta
 disease_stage
 ```
 
-\[1\] Stage1 Stage2 Stage2 Stage3 Stage1 Stage4  
-Levels: Stage1 Stage2 Stage3 Stage4  
+    ## [1] Stage1 Stage2 Stage2 Stage3 Stage1 Stage4
+    ## Levels: Stage1 Stage2 Stage3 Stage4
+
 <br>
 
 ##### In R, categories of the data are stored as factor levels. The function levels() can be used to access the factor levels.
@@ -1008,7 +1018,7 @@ Levels: Stage1 Stage2 Stage3 Stage4
 levels(disease_stage)
 ```
 
-\[1\] “Stage1” “Stage2” “Stage3” “Stage4”
+    ## [1] "Stage1" "Stage2" "Stage3" "Stage4"
 
 ##### A function to compactly display the internal structure of an R object is str(). Please use str() to display the internal structure of the object we just created *disease_stage*. It shows that *disease_stage* is a factor with four levels: “Stage1”, “Stage2”, “Stage3”, etc… The integer numbers after the colon shows that these levels are encoded under the hood by integer values: the first level is 1, the second level is 2, and so on. Basically, when *factor* function is called, R first scan through the vector to determine how many different categories there are, then it converts the character vector to a vector of integer values, with each integer value labeled with a category.
 
@@ -1016,7 +1026,7 @@ levels(disease_stage)
 str(disease_stage)
 ```
 
-Factor w/ 4 levels “Stage1”,“Stage2”,..: 1 2 2 3 1 4
+    ##  Factor w/ 4 levels "Stage1","Stage2",..: 1 2 2 3 1 4
 
 ##### By default, R infers the factor levels by ordering the unique elements in a factor alphanumerically. One may specifically define the factor levels at the creation of the factor.
 
@@ -1026,7 +1036,7 @@ disease_stage <- factor(c("Stage1", "Stage2", "Stage2", "Stage3", "Stage1", "Sta
 str(disease_stage)
 ```
 
-Factor w/ 4 levels “Stage2”,“Stage1”,..: 2 1 1 3 2 4
+    ##  Factor w/ 4 levels "Stage2","Stage1",..: 2 1 1 3 2 4
 
 If you want to know the number of individuals at each levels, there are
 two functions: *summary* and *table*.
@@ -1035,16 +1045,16 @@ two functions: *summary* and *table*.
 summary(disease_stage)
 ```
 
-Stage2 Stage1 Stage3 Stage4  
-2 2 1 1
+    ## Stage2 Stage1 Stage3 Stage4 
+    ##      2      2      1      1
 
 ``` r
 table(disease_stage)
 ```
 
-disease_stage  
-Stage2 Stage1 Stage3 Stage4  
-2 2 1 1
+    ## disease_stage
+    ## Stage2 Stage1 Stage3 Stage4 
+    ##      2      2      1      1
 
 ## Quiz 2
 
@@ -1116,12 +1126,11 @@ my_matrix <- cbind(col1, col2, col3)
 my_matrix
 ```
 
-     col1 col2 col3  
-
-\[1,\] 1 2 8  
-\[2,\] 3 18 37  
-\[3,\] 8 27 267  
-\[4,\] 9 10 19
+    ##      col1 col2 col3
+    ## [1,]    1    2    8
+    ## [2,]    3   18   37
+    ## [3,]    8   27  267
+    ## [4,]    9   10   19
 
 ##### One other way to create a matrix is to use *matrix()* function.
 
@@ -1130,42 +1139,39 @@ nums <- c(col1, col2, col3)
 nums
 ```
 
-\[1\] 1 3 8 9 2 18 27 10 8 37 267 19
+    ##  [1]   1   3   8   9   2  18  27  10   8  37 267  19
 
 ``` r
 matrix(nums, ncol=2)
 ```
 
-     [,1] [,2]  
-
-\[1,\] 1 27  
-\[2,\] 3 10  
-\[3,\] 8 8  
-\[4,\] 9 37  
-\[5,\] 2 267  
-\[6,\] 18 19
+    ##      [,1] [,2]
+    ## [1,]    1   27
+    ## [2,]    3   10
+    ## [3,]    8    8
+    ## [4,]    9   37
+    ## [5,]    2  267
+    ## [6,]   18   19
 
 ``` r
 rownames(my_matrix) <- c("row1", "row2", "row3", "row4")
 my_matrix
 ```
 
-     col1 col2 col3  
-
-row1 1 2 8  
-row2 3 18 37  
-row3 8 27 267  
-row4 9 10 19
+    ##      col1 col2 col3
+    ## row1    1    2    8
+    ## row2    3   18   37
+    ## row3    8   27  267
+    ## row4    9   10   19
 
 ``` r
 t(my_matrix) # transposing the matrix
 ```
 
-     row1 row2 row3 row4  
-
-col1 1 3 8 9  
-col2 2 18 27 10  
-col3 8 37 267 19
+    ##      row1 row2 row3 row4
+    ## col1    1    3    8    9
+    ## col2    2   18   27   10
+    ## col3    8   37  267   19
 
 ##### To find out the dimension of a matrix:
 
@@ -1173,19 +1179,19 @@ col3 8 37 267 19
 ncol(my_matrix)
 ```
 
-\[1\] 3
+    ## [1] 3
 
 ``` r
 nrow(my_matrix)
 ```
 
-\[1\] 4
+    ## [1] 4
 
 ``` r
 dim(my_matrix)
 ```
 
-\[1\] 4 3
+    ## [1] 4 3
 
 ##### Calculations with numeric matrices.
 
@@ -1193,23 +1199,21 @@ dim(my_matrix)
 my_matrix * 3
 ```
 
-     col1 col2 col3  
-
-row1 3 6 24  
-row2 9 54 111  
-row3 24 81 801  
-row4 27 30 57
+    ##      col1 col2 col3
+    ## row1    3    6   24
+    ## row2    9   54  111
+    ## row3   24   81  801
+    ## row4   27   30   57
 
 ``` r
 log10(my_matrix)
 ```
 
-          col1     col2     col3  
-
-row1 0.0000000 0.301030 0.903090  
-row2 0.4771213 1.255273 1.568202  
-row3 0.9030900 1.431364 2.426511  
-row4 0.9542425 1.000000 1.278754
+    ##           col1     col2     col3
+    ## row1 0.0000000 0.301030 0.903090
+    ## row2 0.4771213 1.255273 1.568202
+    ## row3 0.9030900 1.431364 2.426511
+    ## row4 0.9542425 1.000000 1.278754
 
 Total of each row.
 
@@ -1217,8 +1221,8 @@ Total of each row.
 rowSums(my_matrix)
 ```
 
-row1 row2 row3 row4  
-11 58 302 38
+    ## row1 row2 row3 row4 
+    ##   11   58  302   38
 
 Total of each column.
 
@@ -1226,8 +1230,8 @@ Total of each column.
 colSums(my_matrix)
 ```
 
-col1 col2 col3  
-21 57 331
+    ## col1 col2 col3 
+    ##   21   57  331
 
 ##### There is a data structure *Array* in R, that holds multi-dimensional (d \> 2) data and is a generalized version of a matrix. *Matrix* is used much more commonly than *Array*, therefore we are not going to talk about *Array* here.
 
@@ -1244,13 +1248,13 @@ meta.data <- data.frame(patients_name=patients_name, disease_stage=disease_stage
 meta.data
 ```
 
-patients_name disease_stage Family_history patients_age  
-1 Patient1 Stage1 Y 31  
-2 Patient2 Stage2 N 40  
-3 Patient3 Stage2 Y 39  
-4 Patient4 Stage3 N 50  
-5 Patient5 Stage1 Y 45  
-6 Patient6 Stage4 Y 65
+    ##   patients_name disease_stage Family_history patients_age
+    ## 1      Patient1        Stage1              Y           31
+    ## 2      Patient2        Stage2              N           40
+    ## 3      Patient3        Stage2              Y           39
+    ## 4      Patient4        Stage3              N           50
+    ## 5      Patient5        Stage1              Y           45
+    ## 6      Patient6        Stage4              Y           65
 
 ###### To check whether a data is a data frame, use the function is.data.frame().
 
@@ -1258,13 +1262,13 @@ patients_name disease_stage Family_history patients_age
 is.data.frame(meta.data)
 ```
 
-\[1\] TRUE
+    ## [1] TRUE
 
 ``` r
 is.data.frame(my_matrix)
 ```
 
-\[1\] FALSE
+    ## [1] FALSE
 
 ###### One can convert a matrix object to a data frame using the function as.data.frame().
 
@@ -1272,14 +1276,14 @@ is.data.frame(my_matrix)
 class(my_matrix)
 ```
 
-\[1\] “matrix” “array”
+    ## [1] "matrix" "array"
 
 ``` r
 my_data <- as.data.frame(my_matrix)
 class(my_data)
 ```
 
-\[1\] “data.frame”
+    ## [1] "data.frame"
 
 ##### A data frame can be transposed in the similar way as a matrix. However, the result of transposing a data frame might not be a data frame anymore.
 
@@ -1287,22 +1291,20 @@ class(my_data)
 my_data
 ```
 
-     col1 col2 col3  
-
-row1 1 2 8  
-row2 3 18 37  
-row3 8 27 267  
-row4 9 10 19
+    ##      col1 col2 col3
+    ## row1    1    2    8
+    ## row2    3   18   37
+    ## row3    8   27  267
+    ## row4    9   10   19
 
 ``` r
 t(my_data)
 ```
 
-     row1 row2 row3 row4  
-
-col1 1 3 8 9  
-col2 2 18 27 10  
-col3 8 37 267 19
+    ##      row1 row2 row3 row4
+    ## col1    1    3    8    9
+    ## col2    2   18   27   10
+    ## col3    8   37  267   19
 
 ##### A data frame can be extended.
 
@@ -1311,26 +1313,26 @@ col3 8 37 267 19
 meta.data
 ```
 
-patients_name disease_stage Family_history patients_age  
-1 Patient1 Stage1 Y 31  
-2 Patient2 Stage2 N 40  
-3 Patient3 Stage2 Y 39  
-4 Patient4 Stage3 N 50  
-5 Patient5 Stage1 Y 45  
-6 Patient6 Stage4 Y 65
+    ##   patients_name disease_stage Family_history patients_age
+    ## 1      Patient1        Stage1              Y           31
+    ## 2      Patient2        Stage2              N           40
+    ## 3      Patient3        Stage2              Y           39
+    ## 4      Patient4        Stage3              N           50
+    ## 5      Patient5        Stage1              Y           45
+    ## 6      Patient6        Stage4              Y           65
 
 ``` r
 meta.data$BRCA <- c("YES", "NO", "YES", "YES", "YES", "NO")
 meta.data
 ```
 
-patients_name disease_stage Family_history patients_age BRCA  
-1 Patient1 Stage1 Y 31 YES  
-2 Patient2 Stage2 N 40 NO  
-3 Patient3 Stage2 Y 39 YES  
-4 Patient4 Stage3 N 50 YES  
-5 Patient5 Stage1 Y 45 YES  
-6 Patient6 Stage4 Y 65 NO
+    ##   patients_name disease_stage Family_history patients_age BRCA
+    ## 1      Patient1        Stage1              Y           31  YES
+    ## 2      Patient2        Stage2              N           40   NO
+    ## 3      Patient3        Stage2              Y           39  YES
+    ## 4      Patient4        Stage3              N           50  YES
+    ## 5      Patient5        Stage1              Y           45  YES
+    ## 6      Patient6        Stage4              Y           65   NO
 
 ##### A data frame can also be extended using the functions cbind() and rbind(), for adding columns and rows respectively. When using cbind(), the number of values in the new column must match the number of rows in the data frame. When using rbind(), the two data frames must have the same variables/columns.
 
@@ -1339,27 +1341,27 @@ patients_name disease_stage Family_history patients_age BRCA
 cbind(meta.data, Race=c("AJ", "AS", "AA", "NE", "NE", "AS"))
 ```
 
-patients_name disease_stage Family_history patients_age BRCA Race  
-1 Patient1 Stage1 Y 31 YES AJ  
-2 Patient2 Stage2 N 40 NO AS  
-3 Patient3 Stage2 Y 39 YES AA  
-4 Patient4 Stage3 N 50 YES NE  
-5 Patient5 Stage1 Y 45 YES NE  
-6 Patient6 Stage4 Y 65 NO AS
+    ##   patients_name disease_stage Family_history patients_age BRCA Race
+    ## 1      Patient1        Stage1              Y           31  YES   AJ
+    ## 2      Patient2        Stage2              N           40   NO   AS
+    ## 3      Patient3        Stage2              Y           39  YES   AA
+    ## 4      Patient4        Stage3              N           50  YES   NE
+    ## 5      Patient5        Stage1              Y           45  YES   NE
+    ## 6      Patient6        Stage4              Y           65   NO   AS
 
 ``` r
 # rbind can be used to add more rows to a data frame.
 rbind(meta.data, data.frame(patients_name="Patient7", disease_stage="Stage4", Family_history="Y", patients_age=48, BRCA="YES"))
 ```
 
-patients_name disease_stage Family_history patients_age BRCA  
-1 Patient1 Stage1 Y 31 YES  
-2 Patient2 Stage2 N 40 NO  
-3 Patient3 Stage2 Y 39 YES  
-4 Patient4 Stage3 N 50 YES  
-5 Patient5 Stage1 Y 45 YES  
-6 Patient6 Stage4 Y 65 NO  
-7 Patient7 Stage4 Y 48 YES
+    ##   patients_name disease_stage Family_history patients_age BRCA
+    ## 1      Patient1        Stage1              Y           31  YES
+    ## 2      Patient2        Stage2              N           40   NO
+    ## 3      Patient3        Stage2              Y           39  YES
+    ## 4      Patient4        Stage3              N           50  YES
+    ## 5      Patient5        Stage1              Y           45  YES
+    ## 6      Patient6        Stage4              Y           65   NO
+    ## 7      Patient7        Stage4              Y           48  YES
 
 ##### One may use the function *merge* to merge two data frames horizontally, based on one or more common key variables.
 
@@ -1368,26 +1370,26 @@ expression.data <- data.frame(patients_name=c("Patient3", "Patient4", "Patient5"
 expression.data
 ```
 
-patients_name EGFR TP53  
-1 Patient3 10 16493  
-2 Patient4 472 72  
-3 Patient5 103784 8193  
-4 Patient1 1782 1849  
-5 Patient2 187 173894  
-6 Patient6 18289 1482
+    ##   patients_name   EGFR   TP53
+    ## 1      Patient3     10  16493
+    ## 2      Patient4    472     72
+    ## 3      Patient5 103784   8193
+    ## 4      Patient1   1782   1849
+    ## 5      Patient2    187 173894
+    ## 6      Patient6  18289   1482
 
 ``` r
 md2 <- merge(meta.data, expression.data, by="patients_name")
 md2
 ```
 
-patients_name disease_stage Family_history patients_age BRCA EGFR TP53  
-1 Patient1 Stage1 Y 31 YES 1782 1849  
-2 Patient2 Stage2 N 40 NO 187 173894  
-3 Patient3 Stage2 Y 39 YES 10 16493  
-4 Patient4 Stage3 N 50 YES 472 72  
-5 Patient5 Stage1 Y 45 YES 103784 8193  
-6 Patient6 Stage4 Y 65 NO 18289 1482
+    ##   patients_name disease_stage Family_history patients_age BRCA   EGFR   TP53
+    ## 1      Patient1        Stage1              Y           31  YES   1782   1849
+    ## 2      Patient2        Stage2              N           40   NO    187 173894
+    ## 3      Patient3        Stage2              Y           39  YES     10  16493
+    ## 4      Patient4        Stage3              N           50  YES    472     72
+    ## 5      Patient5        Stage1              Y           45  YES 103784   8193
+    ## 6      Patient6        Stage4              Y           65   NO  18289   1482
 
 Save your workspace to a file so we can load it for day 2:
 

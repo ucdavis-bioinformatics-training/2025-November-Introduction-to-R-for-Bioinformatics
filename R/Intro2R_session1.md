@@ -183,11 +183,8 @@ RStudio has many features:
 - runs on all platforms and over the web
 - etc. etc. etc.
 
-RStudio and its team have contributed to many R packages.
-``` math
-13
-```
-These include:
+RStudio and its team have contributed to many R packages.\[13\] These
+include:
 
 - Tidyverse – R packages for data science, including ggplot2, dplyr,
   tidyr, and purrr
@@ -206,7 +203,7 @@ RStudio Cheat Sheets:
 
 There are three concepts that are essential in any programming language:
 
-## VARIABLES
+- VARIABLES
 
 A variable is a named storage. Creating a variable is to reserve some
 space in memory. In R, the name of a variable can have letters, numbers,
@@ -214,7 +211,7 @@ dot and underscore. However, a valid variable name cannot start with a
 underscore or a number, or start with a dot that is followed by a
 number.
 
-## FUNCTIONS
+- FUNCTIONS
 
 A function is a block of organized, reusable code that is used to
 perform a set of predefined operations. A function may take zero or more
@@ -230,7 +227,7 @@ In R, to get help information on a funciton, one may use the command:
 
 **?function.name**
 
-## OPERATIONS
+- OPERATIONS
 
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 
@@ -594,7 +591,7 @@ Logical AND
 
 <td style="text-align:center;">
 
-&#124;
+&amp;#124;
 </td>
 
 <td style="text-align:center;">
@@ -608,7 +605,7 @@ Element-wise logical OR
 
 <td style="text-align:center;">
 
-&#124;&#124;
+&amp;#124;&amp;#124;
 </td>
 
 <td style="text-align:center;">
@@ -758,7 +755,7 @@ is.character(gene)
 
 <br>
 
-##### In the case that one compares two different classes of data, the coersion rule in R is **logical -\> integer -\> numeric -\> complex -\> character”, ‘red’** . The following is an example of converting a numeric variable to character.
+##### In the case that one compares two different classes of data, the coersion rule in R is logical -\> integer -\> numeric -\> complex -\> character . The following is an example of converting a numeric variable to character.
 
 ``` r
 b
